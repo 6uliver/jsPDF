@@ -1,7 +1,7 @@
 /** @license
  *
  * jsPDF - PDF Document creation from JavaScript
- * Version 3.0.1 Built on 2025-03-17T14:19:36.873Z
+ * Version 3.0.1 Built on 2025-05-06T09:22:01.655Z
  *                      CommitID 00000000
  *
  * Copyright (c) 2010-2021 James Hall <james@parall.ax>, https://github.com/MrRio/jsPDF
@@ -27088,12 +27088,7 @@ WebPDecoder.prototype.getData = function() {
 (function(jsPDF) {
 
   var binaryStringToUint8Array = function(binary_string) {
-    var len = binary_string.length;
-    var bytes = new Uint8Array(len);
-    for (var i = 0; i < len; i++) {
-      bytes[i] = binary_string.charCodeAt(i);
-    }
-    return bytes;
+    return (new TextEncoder()).encode(binary_string)
   };
 
   var addFont = function(font, file) {
