@@ -15,12 +15,7 @@ import { atob } from "../libs/AtobBtoa.js";
   "use strict";
 
   var binaryStringToUint8Array = function(binary_string) {
-    var len = binary_string.length;
-    var bytes = new Uint8Array(len);
-    for (var i = 0; i < len; i++) {
-      bytes[i] = binary_string.charCodeAt(i);
-    }
-    return bytes;
+    return (new TextEncoder()).encode(binary_string)
   };
 
   var addFont = function(font, file) {
